@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAtom } from 'jotai';
-import { userAtom } from '../userAtom';
+import { userAtom } from '../atoms/userAtom';
 import Cookies from 'js-cookie';
 
 
