@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAtom } from 'jotai';
-import { userAtom } from './userAtom';
+import { userAtom } from './atoms/userAtom';
 import Register from './pages/register';
 import Sign_in from './pages/login';
 
@@ -9,7 +9,6 @@ import Sign_in from './pages/login';
 import Cookies from 'js-cookie';
 
 function App() {
-  //const [user] = useAtom(userAtom);
   const [, setUser] = useAtom(userAtom);
 
   useEffect(() => {
