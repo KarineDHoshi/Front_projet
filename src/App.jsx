@@ -3,6 +3,7 @@ import { useAtom } from 'jotai';
 import { userAtom } from './userAtom';
 import Register from './pages/register';
 import Sign_in from './pages/login';
+import Logout from './components/logout';
 
 
 import Cookies from 'js-cookie';
@@ -25,12 +26,13 @@ function App() {
   }, []);
 
   return (
- 
+
         <div>
         <Register />
         <Sign_in />
+        <Logout />
       </div>
-       
+
       )}
 
 
