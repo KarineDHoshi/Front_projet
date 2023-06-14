@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../userAtom';
 import Cookies from 'js-cookie';
+import Logout from '../components/logout';
 
 
 function Sign_in() {
@@ -76,6 +77,9 @@ function Sign_in() {
       </div>
 
       <button type="submit">Se connecter !</button>
+
+      <Logout />
+
     </form>
   );
 }
