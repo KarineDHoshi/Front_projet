@@ -1,9 +1,9 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from './userAtom';
 import Register from './pages/register';
 import Sign_in from './pages/login';
-import Logout from './components/logout';
 
 
 import Cookies from 'js-cookie';
@@ -26,14 +26,19 @@ function App() {
   }, []);
 
   return (
-
-        <div>
-        <Register />
-        <Sign_in />
-        <Logout />
-      </div>
-
-      )}
+    <div>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path='/' element={} /> */}
+          <Route path='/users' element={<Register />} />
+          <Route path='/users/sign_in' element={<Sign_in />} />
+          {/* <Route path='/' element={} /> */}
+          {/* <Route path='/' element={}> /> */}
+          {/* <Route path='/' element={}> /> */}
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )}
 
 
 export default App;
