@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAtom } from 'jotai';
-import { userAtom } from '../atoms/userAtom';
+import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
 
 function Logout() {
