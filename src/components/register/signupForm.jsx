@@ -1,10 +1,11 @@
+import React from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
 
 
-function SignupForm() {
+function signupForm () {
   const [, setUser] = useAtom(userAtom);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -91,4 +92,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm;
+export default signupForm;

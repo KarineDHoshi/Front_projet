@@ -1,8 +1,10 @@
+import React from 'react';
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
-import Logout from '../components/logout';
+import Logout from '../LogOut/logoutButton';
 
 
 function Sign_in() {
