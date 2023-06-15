@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
-
+import { Link } from "react-router-dom";
 
 function signupForm () {
   const [, setUser] = useAtom(userAtom);
@@ -48,17 +47,17 @@ function signupForm () {
         setError('Erreur lors de la création du compte');
       }
     } catch (error) {
-      setError('Erreur lors de la création du compte');
+      setError('Erreur lors de la création du compte(connection)');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Créer un compte</h2>
+      <h2>Crée ton compte</h2>
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
       <div>
-        <label htmlFor="email">Email :</label>
+        <label htmlFor="email">Email :   </label>
         <input
           type="email"
           id="email"
@@ -67,8 +66,9 @@ function signupForm () {
           required
         />
       </div>
+      <br></br>
       <div>
-        <label htmlFor="password">Mot de passe :</label>
+        <label htmlFor="password">Mot de passe :   </label>
         <input
           type="password"
           id="password"
@@ -77,17 +77,21 @@ function signupForm () {
           required
         />
       </div>
+      <br></br>
       <div>
-        <label htmlFor="password">Confirme ton mot de passe :</label>
+        <label htmlFor="password-confirmation">Confirme ton mot de passe :   </label>
         <input
           type="password"
-          id="password"
+          id="password-confirmation"
           value={password_confirmation}
           onChange={(e) => setPassword_Confirmation(e.target.value)}
           required
         />
       </div>
-      <button type="submit">Créer un compte et se connecter</button>
+      <br></br>
+      <button type="submit">Créer un compte</button>
+      <br></br>
+      <p className="signInLink"> Tu as déjà un compte ? <Link to="/users/sign_in">Connecte-toi !</Link></p>
     </form>
   );
 }

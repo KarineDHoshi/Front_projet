@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
-import Logout from '../LogOut/logoutButton';
-
 
 function Sign_in() {
   const [, setUser] = useAtom(userAtom);
@@ -54,11 +51,11 @@ function Sign_in() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Créer un compte</h2>
+      <h2>Se connecter</h2>
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
       <div>
-        <label htmlFor="email">Email :</label>
+        <label htmlFor="email">Email :   </label>
         <input
           type="email"
           id="email"
@@ -67,8 +64,9 @@ function Sign_in() {
           required
         />
       </div>
+      <br></br>
       <div>
-        <label htmlFor="password">Mot de passe :</label>
+        <label htmlFor="password">Mot de passe :   </label>
         <input
           type="password"
           id="password"
@@ -77,11 +75,10 @@ function Sign_in() {
           required
         />
       </div>
-
+      <br></br>
       <button type="submit">Se connecter !</button>
-      <p className="signInLink"> Tu n'as pas de compte ? <Link to="/users">Inscris toi</Link></p>
-
-      <Logout />
+      <br></br>
+      <p className="signInLink"> Tu n'as pas de compte ? <Link to="/users">Inscris-toi</Link></p>
 
     </form>
   );
