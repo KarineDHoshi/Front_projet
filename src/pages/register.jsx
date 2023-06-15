@@ -1,8 +1,11 @@
-import { SignupForm } from "../../components/Register/signupForm";
+import React from 'react';
+import SignupForm from "../components/register/signupForm";
 
-export const Register = () => {
-  
+const Register = () => {
+
   return (
-          <SignupForm/>
+    <SignupForm />
   );
 };
+
+export default Register;

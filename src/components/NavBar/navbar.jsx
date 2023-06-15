@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { userAtom } from "../../atoms/userAtom";
-import { Logout } from "../LogOut/logoutButton";
+import Logout from "../LogOut/logoutButton";
 
 const Navbar = () => {
   const [user] = useAtom(userAtom);

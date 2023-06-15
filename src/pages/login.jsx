@@ -1,8 +1,11 @@
-import { LoginForm } from "../../components/LogInForm/LoginForm";
+import React from 'react';
+import Sign_in from "../components/logIn/loginForm";
 
-export const LogIn = () => {
+const LogIn = () => {
 
   return (
-    <LoginForm/>
+    <Sign_in />
   );
 }
+
+export default LogIn;

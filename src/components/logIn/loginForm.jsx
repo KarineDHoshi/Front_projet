@@ -1,14 +1,15 @@
+import React from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
+import Logout from '../LogOut/logoutButton';
 
 
-function SignupForm() {
+function Sign_in() {
   const [, setUser] = useAtom(userAtom);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [password_confirmation, setPassword_Confirmation] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -18,7 +19,7 @@ function SignupForm() {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('http://localhost:3000/users/sign_in', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +28,6 @@ function SignupForm() {
           user: {
             email: email,
             password: password,
-            password_confirmation: password_confirmation
           }
         }),
       });
@@ -42,12 +42,12 @@ function SignupForm() {
           isLoggedIn: true,
         });
 
-        setSuccess('Compte créé avec succès!'); // Set success flash message
+        setSuccess('Login avec succès!'); // Set success flash message
       } else {
-        setError('Erreur lors de la création du compte');
+        setError('Erreur lors du login!');
       }
     } catch (error) {
-      setError('Erreur lors de la création du compte');
+      setError('Erreur lors de la tentative de connection!');
     }
   };
 
@@ -76,19 +76,14 @@ function SignupForm() {
           required
         />
       </div>
-      <div>
-        <label htmlFor="password">Confirme ton mot de passe :</label>
-        <input
-          type="password"
-          id="password"
-          value={password_confirmation}
-          onChange={(e) => setPassword_Confirmation(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit">Créer un compte et se connecter</button>
+
+      <button type="submit">Se connecter !</button>
+      <p className="signInLink"> Tu n'as pas de compte ? <Link to="/users">Inscris toi</Link></p>
+
+      <Logout />
+
     </form>
   );
 }
 
-export default SignupForm;
+export default Sign_in;
