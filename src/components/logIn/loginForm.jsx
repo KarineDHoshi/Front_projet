@@ -55,7 +55,7 @@ function Sign_in() {
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
       <div>
-        <label htmlFor="email">Email :</label>
+        <label htmlFor="email">Email :   </label>
         <input
           type="email"
           id="email"
@@ -64,8 +64,9 @@ function Sign_in() {
           required
         />
       </div>
+      <br></br>
       <div>
-        <label htmlFor="password">Mot de passe :</label>
+        <label htmlFor="password">Mot de passe :   </label>
         <input
           type="password"
           id="password"
@@ -74,9 +75,10 @@ function Sign_in() {
           required
         />
       </div>
-
+      <br></br>
       <button type="submit">Se connecter !</button>
-      <p className="signInLink"> Tu n'as pas de compte ? <Link to="/users">Inscris toi</Link></p>
+      <br></br>
+      <p className="signInLink"> Tu n'as pas de compte ? <Link to="/users">Inscris-toi</Link></p>
 
     </form>
   );
