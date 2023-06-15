@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useAtom } from "jotai";
-import { userAtom } from "../../atoms/userAtom";
-import Logout from "../LogOut/logoutButton";
-import './navbar.css'; // Import the CSS file for navbar styles
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAtom } from 'jotai';
+import { userAtom } from '../../atoms/userAtom';
+import Logout from '../LogOut/logoutButton';
+import './navbar.css';
 
 const Navbar = () => {
   const [user] = useAtom(userAtom);
@@ -13,12 +13,15 @@ const Navbar = () => {
       <div className="navbar-container">
         <ul className="navbar-list">
           <li className="navbar-item">
-            <Link to="/">Accueil</Link>
+            <Link to="/home">Accueil</Link>
           </li>
           {user.isLoggedIn ? (
             <>
               <li className="navbar-item">
                 <Link to="/profile">Profil</Link>
+              </li>
+              <li className="navbar-item">
+                <Logout />
               </li>
             </>
           ) : (
@@ -32,16 +35,6 @@ const Navbar = () => {
             </>
           )}
         </ul>
-        {user.isLoggedIn ? (
-          <>
-            <div>
-              <p> Bienvenue !</p>
-            </div>
-            <div>
-              <Logout />
-            </div>
-          </>
-        ) : null}
       </div>
     </nav>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '../../atoms/userAtom';
 import Cookies from 'js-cookie';
@@ -25,8 +25,9 @@ function Logout() {
 
   return (
     <div>
-      <button onClick={HandleLogout}>Se déconnecter</button>
-    </div>
+      <a href="/home" onClick={HandleLogout}>Se déconnecter</a>
+  </div>
+  
   )
 }
 
