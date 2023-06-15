@@ -27,11 +27,11 @@ function App() {
       });
     }
   }, []);
-
+//nouvelle pull request
   return (
     <div>
+    <BrowserRouter>
       <Navbar />
-      <BrowserRouter>
         <Routes>
           <Route path='/home' element={<Home />} />
           <Route path='/users' element={<Register />} />
