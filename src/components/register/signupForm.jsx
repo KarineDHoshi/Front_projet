@@ -53,11 +53,11 @@ function signupForm () {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Créer un compte</h2>
+      <h2>Crée ton compte</h2>
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
       <div>
-        <label htmlFor="email">Email :</label>
+        <label htmlFor="email">Email :   </label>
         <input
           type="email"
           id="email"
@@ -68,7 +68,7 @@ function signupForm () {
       </div>
       <br></br>
       <div>
-        <label htmlFor="password">Mot de passe :</label>
+        <label htmlFor="password">Mot de passe :   </label>
         <input
           type="password"
           id="password"
@@ -79,7 +79,7 @@ function signupForm () {
       </div>
       <br></br>
       <div>
-        <label htmlFor="password-confirmation">Confirme ton mot de passe :</label>
+        <label htmlFor="password-confirmation">Confirme ton mot de passe :   </label>
         <input
           type="password"
           id="password-confirmation"
