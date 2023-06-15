@@ -5,6 +5,9 @@ import { useAtom } from 'jotai';
 import { userAtom } from './atoms/userAtom';
 import Register from './pages/register';
 import Sign_in from './pages/login';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Navbar from './components/NavBar/navbar';
 
 
 import Cookies from 'js-cookie';
@@ -27,12 +30,13 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <BrowserRouter>
         <Routes>
-          {/* <Route path='/' element={} /> */}
+          <Route path='/home' element={<Home />} />
           <Route path='/users' element={<Register />} />
           <Route path='/users/sign_in' element={<Sign_in />} />
-          {/* <Route path='/' element={} /> */}
+          <Route path='/profile' element={<Profile />} />
           {/* <Route path='/' element={}> /> */}
           {/* <Route path='/' element={}> /> */}
         </Routes>
